@@ -9,9 +9,6 @@ fn main() {
         process::exit(1);
     });
 
-    println!("Searching for word '{}'.", cfg.query);
-    println!("In file '{}'.", cfg.filename);
-
     if let Err(e) = ch12::run(cfg) {
         println!("Application error: {}", e);
         process::exit(1);
