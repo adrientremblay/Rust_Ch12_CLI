@@ -12,9 +12,12 @@ fn main() {
     println!("Searching for word '{}'.", cfg.query);
     println!("In file '{}'.", cfg.filename);
 
+    run(cfg);
+}
+
+fn run(cfg: Config) {
     let contents =
         fs::read_to_string(cfg.filename).expect("Something went wrong with reading the file");
-
     println!("With text:\n{}", contents);
 }
 
