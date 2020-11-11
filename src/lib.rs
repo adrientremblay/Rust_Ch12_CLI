@@ -4,6 +4,10 @@ use std::fs;
 pub fn run(cfg: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(cfg.filename)?;
 
+    for line in search(&cfg.query, &contents) {
+        println!("{}", line);
+    }
+
     Ok(())
 }
 
